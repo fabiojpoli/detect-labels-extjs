@@ -1,0 +1,51 @@
+{
+    "name": "DedectLabels",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "7.3.0.19",
+            "frameworkVersion": "7.3.0.55"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:53151/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.9",
+    "xdsBuild": 443,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext73",
+    "viewOrderMap": {
+        "view": [
+            "38eda96d-485a-4c62-9de7-4908aa228c7c",
+            "5f2e08eb-47ad-475d-a197-b79bcf178e15",
+            "b72ff212-e74e-408a-9a7f-f7020730e472"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "a8a76446-804a-4709-868e-dffd73e4e5b5",
+            "a8810fec-ec6e-4fec-8f24-0f73994ff4d7",
+            "bcdea9e0-8697-4402-a28b-d6a9489971f1"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "    apiUrl: 'https://vision.googleapis.com/v1/images:annotate',",
+            "    apiKey: 'yourGoogleApiKey',",
+            "    imageUri: 'gs://cloud-samples-data/vision/label/setagaya.jpeg',",
+            "    maxResults: 5,",
+            "    response: null",
+            "}"
+        ],
+        "designer|userAlias": "myform",
+        "designer|userClassName": "MyFormViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "5f2e08eb-47ad-475d-a197-b79bcf178e15"
+}

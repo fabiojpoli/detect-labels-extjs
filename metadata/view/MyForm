@@ -1,0 +1,245 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|initialView": true,
+        "designer|userAlias": "myform",
+        "designer|userClassName": "MyForm",
+        "height": 582,
+        "title": "Detect Labels - Google API",
+        "width": 517
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyForm",
+    "designerId": "38eda96d-485a-4c62-9de7-4908aa228c7c",
+    "viewControllerInstanceId": "b72ff212-e74e-408a-9a7f-f7020730e472",
+    "viewModelInstanceId": "5f2e08eb-47ad-475d-a197-b79bcf178e15",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "fcca32c7-4337-4cc6-b341-62351c16e7db",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Run"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "7db45417-966f-437e-9b3c-1351da0a66f5",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRunClick",
+                                "implHandler": [
+                                    "var vm = this.getViewModel(),",
+                                    "    data = vm.getData(), // get all data from the view model",
+                                    "    form = this.getView(); // get the form reference to show the mask while the process is running",
+                                    "",
+                                    "// put the mask",
+                                    "form.setLoading();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    // here we concat the apiUrl with the apiKey defined on our form",
+                                    "    url: Ext.String.format('{0}?key={1}', data.apiUrl, data.apiKey),",
+                                    "    jsonData: {",
+                                    "        requests: [",
+                                    "            {",
+                                    "                image: {",
+                                    "                    source: {",
+                                    "                        // our image uri is also flexible",
+                                    "                        gcsImageUri: data.imageUri",
+                                    "                    }",
+                                    "                },",
+                                    "                features: [",
+                                    "                    {",
+                                    "                        // same for our max results",
+                                    "                        maxResults: data.maxResults,",
+                                    "                        type: 'LABEL_DETECTION'",
+                                    "                    }",
+                                    "                ]",
+                                    "            }",
+                                    "        ]",
+                                    "    },",
+                                    "    success: function(response) {",
+                                    "        // set the value response to the response text comming from the api.",
+                                    "        // It will reflect to our textarea to show the result",
+                                    "        vm.set('response', response.responseText);",
+                                    "        ",
+                                    "        // remove the mask",
+                                    "        form.setLoading(false);",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onRunClick",
+                            "designerId": "b9baa656-9ca0-4b37-a627-d0cd95ca373f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Display",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "API Url",
+                "layout|anchor": "100%",
+                "value": [
+                    "{apiUrl}"
+                ]
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "value": "binding"
+            },
+            "name": "MyDisplayField",
+            "designerId": "62897786-e252-4af0-aefd-19aa86fd2982"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "API Key",
+                "layout|anchor": "100%",
+                "value": [
+                    "{apiKey}"
+                ]
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "value": "binding"
+            },
+            "name": "MyTextField",
+            "designerId": "e0f6cd30-f526-4a84-8211-9f83af723217"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowDecimals": false,
+                "fieldLabel": "Max. Results",
+                "layout|anchor": "100%",
+                "value": [
+                    "{maxResults}"
+                ]
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "value": "binding",
+                "allowDecimals": "boolean"
+            },
+            "name": "MyNumberField",
+            "designerId": "ca51e7ae-93ac-4a8e-bf1b-ad1811fb97a5"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Image URI",
+                "layout|anchor": "100%",
+                "value": [
+                    "{imageUri}"
+                ]
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "value": "binding"
+            },
+            "name": "MyTextField2",
+            "designerId": "9b2b0f8d-b40c-497c-a1a1-667235254edc"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Response",
+                "height": 303,
+                "layout|anchor": "100%",
+                "value": [
+                    "{response}"
+                ]
+            },
+            "configAlternates": {
+                "value": "binding",
+                "fieldLabel": "string",
+                "height": "auto",
+                "layout|anchor": "string"
+            },
+            "name": "MyTextArea",
+            "designerId": "bc4e6b11-aad9-45c1-8f83-6c8cb852db66"
+        }
+    ]
+}
