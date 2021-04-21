@@ -7,7 +7,7 @@
             "frameworkVersion": "7.3.0.55"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:57535/",
+        "urlPrefix": "http://localhost:60600/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Auto Expand",
@@ -16,7 +16,7 @@
                 "width": null
             }
         },
-        "exportPath": "",
+        "exportPath": "/Development/php/sencha-blogs/publish/detect-labels-extjs",
         "spacesToIndent": 4,
         "sdkPath": "",
         "lineEnding": "LF",
@@ -28,7 +28,8 @@
             "value": "webBuild",
             "display": "Build web app",
             "buildPlatform": false
-        }
+        },
+        "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.9",
     "xdsBuild": 443,
@@ -45,7 +46,7 @@
         "controller": [],
         "model": [],
         "resource": [
-            "f3436c1d-1999-464a-94a2-db98f5bb294a",
+            "128418d6-1e9d-4cad-b119-546b3af8e375",
             "a8810fec-ec6e-4fec-8f24-0f73994ff4d7",
             "bcdea9e0-8697-4402-a28b-d6a9489971f1"
         ],

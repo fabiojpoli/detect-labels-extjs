@@ -112,7 +112,7 @@
                                     "        // set the value response to the response text comming from the api.",
                                     "        // It will reflect to our textarea to show the result",
                                     "        vm.set('response', response.responseText);",
-                                    "",
+                                    "        ",
                                     "        // remove the mask",
                                     "        form.setLoading(false);",
                                     "    }",
