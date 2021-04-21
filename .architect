@@ -44,8 +44,18 @@
         "model": true,
         "controller": true,
         "resource": true,
-        "a8a76446-804a-4709-868e-dffd73e4e5b5": {
-            "id": "a8a76446-804a-4709-868e-dffd73e4e5b5"
+        "f3436c1d-1999-464a-94a2-db98f5bb294a": {
+            "id": "f3436c1d-1999-464a-94a2-db98f5bb294a",
+            "cn": [
+                {
+                    "id": "6201a3e4-7b55-44ab-8389-7a8342d90d89",
+                    "cn": [
+                        {
+                            "id": "0c3f91b2-a64a-46fc-87b9-524679efe710"
+                        }
+                    ]
+                }
+            ]
         },
         "a8810fec-ec6e-4fec-8f24-0f73994ff4d7": {
             "id": "a8810fec-ec6e-4fec-8f24-0f73994ff4d7"

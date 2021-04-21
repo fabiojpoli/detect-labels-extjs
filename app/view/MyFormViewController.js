@@ -18,36 +18,43 @@ Ext.define('DetectLabelsApp.view.MyFormViewController', {
     alias: 'controller.myform',
 
     onRunClick: function(button, e, eOpts) {
-        var vm = this.getViewModel(),
-            data = vm.getData(), // get all data from the view model
-            form = this.getView(); // get the form reference to show the mask while the process is running
+        const
+        vm = this.getViewModel(),
+        data = vm.getData(), // get all data from the view model
+        form = this.getView(), // get the form reference to show the mask while the process is running
+        {
+            apiUrl,
+            apiKey,
+            imageUri,
+            maxResults
+        } = data;
 
-            // put the mask
-            form.setLoading();
+        // put the mask
+        form.setLoading();
 
         Ext.Ajax.request({
             // here we concat the apiUrl with the apiKey defined on our form
-            url: Ext.String.format('{0}?key={1}', data.apiUrl, data.apiKey),
+            url: `${apiUrl}?key=${apiKey}`,
             jsonData: {
                 requests: [
                 {
                     image: {
                         source: {
                             // our image uri is also flexible
-                            gcsImageUri: data.imageUri
+                            gcsImageUri: imageUri
                         }
                     },
                     features: [
                     {
                         // same for our max results
-                        maxResults: data.maxResults,
+                        maxResults,
                         type: 'LABEL_DETECTION'
                     }
                     ]
                 }
                 ]
             },
-            success: function(response) {
+            success(response) {
                 // set the value response to the response text comming from the api.
                 // It will reflect to our textarea to show the result
                 vm.set('response', response.responseText);
